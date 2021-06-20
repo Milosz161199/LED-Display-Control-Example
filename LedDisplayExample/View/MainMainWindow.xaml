@@ -1,0 +1,48 @@
+﻿<Window x:Class="LedDisplayExample.View.MainMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LedDisplayExample.View"
+        mc:Ignorable="d"
+        Title="MainMainWindow" Height="900" Width="840">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Menu toggle button -->
+        <Button 
+            Grid.Row="0" Grid.Column="1"
+            x:Name="MenuBtn" Click="MenuBtn_Click"
+            Width="62" HorizontalAlignment="Left" Margin="15,5">
+            Menu
+        </Button>
+        <!-- Menu grid -->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" 
+              x:Name="Menu"
+              Background="DarkCyan" Width="150" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Width="100" Height="200" Grid.Row="0" Source="C:\Users\Milosz\Desktop\AMiWdIP-L-main\Desktop\LED Display Control Example\LedDisplayExample\Media\Tlo.jpg" Margin="25,0" />
+            <Button x:Name="btn_chart" Grid.Row="1" Width="100" Margin="5" IsEnabled="True" Click="Btn_chart_Click" >CHART</Button>
+            <Button x:Name="btn_led" Grid.Row="2" Width="100" Margin="5" IsEnabled="True" Click="Btn_led_Click">LED</Button>
+            <Button x:Name="btn_config" Grid.Row="2" Width="100" Margin="25,43,25,-33" IsEnabled="True" Click="Btn_config_Click">CONFIG</Button>
+
+        </Grid>
+        <!-- Configuration: IoT server ip address and request sample time -->
+        <!-- Bottom button menu: start data acquisition / stop data acquisition / update configuration -->
+        <Frame x:Name="frame" Content="Frame" HorizontalAlignment="Left" Height="800" Width="650" Margin="15,22,0,10" Grid.Column="1" Grid.Row="1" Visibility="Visible" NavigationUIVisibility="Hidden"/>
+    </Grid>
+
+</Window>
+
